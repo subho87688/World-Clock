@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="suite01" thread-count='5' parallel='tests'>
+	
+	<listeners>
+  		<listener class-name="utility.ExtentReportManager" />
+  	</listeners>
+	
+	
+	<test name="test01">
+		
+		<parameter name="os" value="Windows 11"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		
+		<groups>
+			<run>
+				<include name="sanity"></include>
+				
+			</run>
+		</groups>
+		<classes>
+			<class name="TestData.TC_01_WorldClock"/>
+			<class name="TestData.TC_02_AppsValidation"/>
+		</classes>
+	</test>
+
+</suite>
